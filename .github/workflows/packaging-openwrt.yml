@@ -84,7 +84,7 @@ jobs:
           # The following download paths, etc. can remain unchanged
           save_rootfsfile_path="openwrt/bin/targets/armvirt/64"
           [ -d "${save_rootfsfile_path}" ] || mkdir -p ${save_rootfsfile_path}
-          curl -s "https://api.github.com/repos/${armvirt_rootfsfile_repo}/releases" | grep -o "${releases_tag_keywords}.*/.*armvirt-64-rootfs.tar.gz" | head -n 1 > DOWNLOAD_URL
+          curl -s "https://api.github.com/repos/${armvirt_rootfsfile_repo}/releases" | grep -o "${releases_tag_keywords}/.*armvirt-64-default-rootfs.tar.gz" | head -n 1 > DOWNLOAD_URL
           [ -s DOWNLOAD_URL ] && wget -q -P ${save_rootfsfile_path} https://github.com/${armvirt_rootfsfile_repo}/releases/download/$(cat DOWNLOAD_URL)
           [ "$?" -ne "0" ] && echo "armvirt file download failed!" && exit 1
           echo "::set-output name=status::success"
