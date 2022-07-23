@@ -14,7 +14,7 @@ on:
       openwrt_soc:
         description: "Select Amlogic SoC."
         required: false
-        default: "vplus_beikeyun_l1pro_s905x3_s90d_qemu"
+        default: "beikeyun"
         type: choice
         options:
           - all
@@ -79,8 +79,6 @@ jobs:
         id: download
         run: |
           # Custom repository and Releases keywords for *rootfs.tar.gz files
-#          armvirt_rootfsfile_repo="ophub/amlogic-s9xxx-openwrt"
-#          releases_tag_keywords="openwrt_s9xxx_"
           armvirt_rootfsfile_repo="unless/build-actions"
           releases_tag_keywords="AutoUpdate"
           # The following download paths, etc. can remain unchanged
