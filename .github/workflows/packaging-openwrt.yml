@@ -80,7 +80,7 @@ jobs:
         run: |
           # Custom repository and Releases keywords for *rootfs.tar.gz files
           armvirt_rootfsfile_repo="unless/build-actions"
-          releases_tag_keywords="AutoUpdate"
+          releases_tag_keywords="Lede-armvirt"
           # The following download paths, etc. can remain unchanged
           save_rootfsfile_path="openwrt/bin/targets/armvirt/64"
           [ -d "${save_rootfsfile_path}" ] || mkdir -p ${save_rootfsfile_path}
